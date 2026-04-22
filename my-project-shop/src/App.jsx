@@ -1,17 +1,16 @@
 import { useState } from 'react';
+import SearchEngine from './SearchEngine';
+import Header from './Header';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <button
-        className="counter"
-        onClick={() => setCount((count) => count + 1)}
-      >
-        Count is {count}
-      </button>
+      <Header />
+      <h1>Välkommen till vår butik!</h1>
+      <div>
+        <SearchEngine />
+      </div>
     </>
   );
 }
