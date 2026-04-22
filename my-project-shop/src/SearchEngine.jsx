@@ -48,7 +48,7 @@ const SearchEngine = () => {
             <div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <p>Pris: {item.price}</p>
+              <p>Pris: {item.price}:-Kr</p>
             </div>
           </li>
         ))}
