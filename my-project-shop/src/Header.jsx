@@ -6,7 +6,9 @@ const Header = () => {
       <img src={logo} alt="Logo" className="logo" />
       <nav>
         <Link to="/">Hem</Link>
-        <Link to="/cart">Kundvagn</Link>
+        <Link to="/cart" className="Cart-Link">
+          🛒 Kundvagn
+        </Link>
       </nav>
     </header>
   );
