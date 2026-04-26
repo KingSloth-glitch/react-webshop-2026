@@ -1,16 +1,19 @@
 import { useState } from 'react';
-import SearchEngine from './SearchEngine';
 import Header from './Header';
+import { Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Cart from './Cart';
 import './App.css';
 
 function App() {
   return (
     <>
       <Header />
-      <h1>Välkommen till vår butik!</h1>
-      <div>
-        <SearchEngine />
-      </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </>
   );
 }

@@ -44,7 +44,7 @@ const SearchEngine = () => {
       <ul>
         {products.map((item) => (
           <li key={item.id}>
-            <img src={item.images[0]} alt={item.title} width="100" />
+            <img src={item.images?.[0]} alt={item.title} width="100" />
             <div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
