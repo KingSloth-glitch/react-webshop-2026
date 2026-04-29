@@ -192,6 +192,11 @@
   border-bottom: 1px solid white;
 }
 
+.header h2 {
+  font-size: 18px;
+  color: black;
+}
+
 .header img {
   width: 40px;
   height: 40px;
