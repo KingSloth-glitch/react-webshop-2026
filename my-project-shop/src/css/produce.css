@@ -1,0 +1,9 @@
+.product-page {
+  padding: 20px;
+  text-align: left;
+}
+
+.product-page img {
+  width: 300px;
+  object-fit: contain;
+}

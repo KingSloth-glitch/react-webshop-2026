@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import SearchEngine from './SearchEngine';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -24,11 +25,11 @@ const Home = () => {
 
       <div className="products">
         {products.map((item) => (
-          <div className="card" key={item.id}>
+          <Link to={`/product/${item.id}`} className="card" key={item.id}>
             <img src={item.images?.[0]} alt={item.title} width="100" />
             <h3>{item.title}</h3>
             <p>{item.price} :-kr</p>
-          </div>
+          </Link>
         ))}
       </div>
     </>
