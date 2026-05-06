@@ -1,9 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useCart } from './context/CartContext';
 
 const ProduceSection = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProdukt = async () => {
@@ -29,6 +31,8 @@ const ProduceSection = () => {
       <h1>{product.title}</h1>
       <p>{product.description}</p>
       <p>Pris: {product.price}:-Kr</p>
+
+      <button onClick={() => addToCart(product)}>Lägg i Kundvagn</button>
     </div>
   );
 };

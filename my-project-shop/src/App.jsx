@@ -6,6 +6,7 @@ import ProduceSection from './ProduceSection';
 import './css/App.css';
 import './css/display.css';
 import './css/produce.css';
+import './css/trolly.css';
 import Footer from './Footer';
 
 function App() {

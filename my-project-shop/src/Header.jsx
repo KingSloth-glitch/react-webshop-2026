@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useCart } from './context/CartContext';
 import logo from './assets/dummycorp2.png';
 const Header = () => {
+  const { cart } = useCart();
+
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <header className="header">
       <img src={logo} alt="Logo" className="logo" />
@@ -8,7 +13,7 @@ const Header = () => {
       <nav>
         <Link to="/">Hem</Link>
         <Link to="/cart" className="Cart-Link">
-          🛒 Kundvagn
+          🛒 Kundvagn ({totalItems})
         </Link>
       </nav>
     </header>

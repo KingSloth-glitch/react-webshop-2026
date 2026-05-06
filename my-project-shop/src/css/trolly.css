@@ -1,0 +1,19 @@
+.trolly {
+  padding: 20px;
+}
+
+.cart-item {
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+}
+
+.quantity-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.quantity-controls button {
+  padding: 4px 10px;
+  cursor: pointer;
+}

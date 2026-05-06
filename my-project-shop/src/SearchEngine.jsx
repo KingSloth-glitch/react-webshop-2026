@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const SearchEngine = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -31,28 +32,26 @@ const SearchEngine = () => {
   }, [searchTerm]);
 
   return (
-    <div>
+    <div className="search">
       <input
+        className="search-input"
         type="text"
-        placeholder="Sök bland våra produkter ..."
+        placeholder="Sök bland våra produkter ...🔍"
         value={searchTerm}
         onChange={(e) => {
           setSearchTerm(e.target.value);
         }}
       />
 
-      <ul>
+      <div className="products">
         {products.map((item) => (
-          <li key={item.id}>
+          <Link to={`/product/${item.id}`} className="card" key={item.id}>
             <img src={item.images?.[0]} alt={item.title} width="100" />
-            <div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <p>Pris: {item.price}:-Kr</p>
-            </div>
-          </li>
+            <h3>{item.title}</h3>
+            <p>Pris: {item.price}:-Kr</p>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
