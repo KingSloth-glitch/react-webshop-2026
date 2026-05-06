@@ -6,6 +6,7 @@ import ProduceSection from './ProduceSection';
 import './css/App.css';
 import './css/display.css';
 import './css/produce.css';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<ProduceSection />} />
       </Routes>
+
+      <Footer />
     </>
   );
 }
