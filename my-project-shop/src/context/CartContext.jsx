@@ -12,7 +12,11 @@ export const CartProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    try {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    } catch (error) {
+      console.error('Failed to save cart to localStorage', error);
+    }
   }, [cart]);
 
   const addToCart = (product) => {
@@ -22,12 +26,12 @@ export const CartProvider = ({ children }) => {
       if (existingProduct) {
         return prev.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + product.quantity }
             : item
         );
       }
 
-      return [...prev, { ...product, quantity: 1 }];
+      return [...prev, { ...product, quantity: product.quantity }];
     });
   };
 
@@ -62,6 +66,10 @@ export const CartProvider = ({ children }) => {
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -72,6 +80,7 @@ export const CartProvider = ({ children }) => {
         decreaseQuantity,
         totalPrice,
         totalItems,
+        clearCart,
       }}
     >
       {children}

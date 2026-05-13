@@ -190,6 +190,9 @@
   padding: 16px 24px;
   background-color: white;
   border-bottom: 1px solid white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header h2 {

@@ -6,6 +6,7 @@ const ProduceSection = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const fetchProdukt = async () => {
@@ -31,8 +32,28 @@ const ProduceSection = () => {
       <h1>{product.title}</h1>
       <p>{product.description}</p>
       <p>Pris: {product.price}:-Kr</p>
+      <div className="quantity-wrapper">
+        <div className="quantity-controls">
+          <button
+            onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}
+          >
+            -
+          </button>
 
-      <button onClick={() => addToCart(product)}>Lägg i Kundvagn</button>
+          <input
+            type="number"
+            value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}
+          ></input>
+
+          <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
+        </div>
+
+        <button onClick={() => addToCart({ ...product, quantity })}>
+          {' '}
+          Lägg i kundvagn
+        </button>
+      </div>
     </div>
   );
 };

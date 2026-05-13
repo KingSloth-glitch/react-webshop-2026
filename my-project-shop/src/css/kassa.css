@@ -1,0 +1,39 @@
+.chekout-page {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.order-summary {
+  background: green;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkout-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.checkout-form button {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
