@@ -60,7 +60,7 @@ const SelfCheckout = () => {
           </div>
         ))}
 
-        <h3>Totalt: {totalPrice}:-kr</h3>
+        <h3>Totalt: {totalPrice.toFixed(2)}:-kr</h3>
       </div>
 
       <form onSubmit={handleSubmit} className="checkout-form">

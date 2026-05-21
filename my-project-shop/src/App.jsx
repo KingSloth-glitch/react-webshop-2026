@@ -9,6 +9,7 @@ import './css/display.css';
 import './css/produce.css';
 import './css/trolly.css';
 import './css/kassa.css';
+import './css/footer.css';
 import Footer from './Footer';
 
 function App() {

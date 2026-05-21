@@ -32,7 +32,7 @@ const Cart = () => {
         </div>
       ))}
 
-      <h2>Total: {totalPrice}:-kr</h2>
+      <h2>Total: {totalPrice.toFixed(2)}:-kr</h2>
       <Link to="/checkout">
         <button>Gå till kassan</button>
       </Link>

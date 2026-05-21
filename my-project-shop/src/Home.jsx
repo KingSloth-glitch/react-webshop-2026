@@ -23,6 +23,8 @@ const Home = () => {
       <h1>Välkommen till vår butik!</h1>
       <SearchEngine />
 
+      <h2>Featured products</h2>
+
       <div className="products">
         {products.map((item) => (
           <Link to={`/product/${item.id}`} className="card" key={item.id}>
