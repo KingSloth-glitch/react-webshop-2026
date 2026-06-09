@@ -26,7 +26,7 @@ const SearchEngine = () => {
       } catch (error) {
         console.error('Error fetching products:', error);
       }
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [searchTerm]);

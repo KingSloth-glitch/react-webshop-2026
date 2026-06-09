@@ -20,7 +20,7 @@ const Cart = () => {
         <div key={item.id} className="cart-item">
           <h3>{item.title}</h3>
           <p>quantity: {item.quantity}</p>
-          <p>pris: {item.price * item.quantity}:-kr</p>
+          <p>pris: {(item.price * item.quantity).toFixed(2)}:-kr</p>
 
           <div className="quantity-controls">
             <button onClick={() => decreaseQuantity(item.id)}>-</button>
